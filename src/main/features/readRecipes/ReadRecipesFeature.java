@@ -20,7 +20,7 @@ public class ReadRecipesFeature {
     public OperationResultMessage<Recipes> getRecipes(){
         OperationResultMessage<String> recipesStringMessage = readFileFeature.readToString("src\\main\\data\\recipes.json");
         if (recipesStringMessage.getStatus() != OperationResultStatus.SUCCESS){
-            return new OperationResultMessage<>(OperationResultStatus.ERROR,recipesStringMessage.getMessage(),null);
+            return errorResult(recipesStringMessage.getMessage());
         }
         String recipesString = recipesStringMessage.getResult();
 
@@ -30,10 +30,16 @@ public class ReadRecipesFeature {
             ArrayList<Recipe> recipeList = converter.fromJson(recipesString,recipeListType);
             Recipes result = new Recipes();
             result.setRecipes(recipeList);
-            return new OperationResultMessage<>(OperationResultStatus.SUCCESS, StringHelper.EMPTY_STRING,result);
+            return successResult(result);
         }
        catch (Exception e){
-            return new OperationResultMessage<>(OperationResultStatus.ERROR,e.getCause().getMessage(),null);
+            return errorResult(e.getMessage());
        }
+    }
+    private OperationResultMessage<Recipes> successResult(Recipes result){
+        return new OperationResultMessage<>(OperationResultStatus.SUCCESS, StringHelper.EMPTY_STRING,result);
+    }
+    private OperationResultMessage<Recipes> errorResult(String message){
+        return new OperationResultMessage<>(OperationResultStatus.ERROR,message,null);
     }
 }
