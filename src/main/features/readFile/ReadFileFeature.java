@@ -3,12 +3,14 @@ package features.readFile;
 import features.readFile.helpers.readFileHelpers;
 import models.OperationResultMessage;
 import models.OperationResultStatus;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+@Service
 public class ReadFileFeature{
     public OperationResultMessage<String> readToString(String fileLocation){
         try{

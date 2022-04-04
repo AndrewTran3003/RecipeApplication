@@ -1,0 +1,35 @@
+private Recipes recipeList;
+
+    @BeforeAll
+    public void setupClass(){
+        recipeList = new Recipes();
+
+        ArrayList<Recipe> recipes = getMockRecipes();
+        recipeList.setRecipes(recipes);
+    }
+
+    private ArrayList<Recipe> getMockRecipes() {
+        ArrayList<Recipe> result = new ArrayList<>();
+        Recipe grilledCheeseOnToast = new Recipe("grilledcheeseontoast", getGrilledCheeseOnToastIngredients());
+        Recipe saladSandwich = new Recipe("saladsandwich",getSaladSandwichIngredients());
+        result.add(grilledCheeseOnToast);
+        result.add(saladSandwich);
+        return result;
+    }
+
+    private ArrayList<Ingredient> getGrilledCheeseOnToastIngredients() {
+        ArrayList<Ingredient> result = new ArrayList<>();
+        Ingredient bread = new Ingredient("bread",2, IngredientUnit.SLICES);
+        Ingredient cheese = new Ingredient("cheese",2, IngredientUnit.SLICES);
+        result.add(bread);
+        result.add(cheese);
+        return result;
+    }
+    private ArrayList<Ingredient> getSaladSandwichIngredients(){
+        ArrayList<Ingredient> result = new ArrayList<>();
+        Ingredient bread = new Ingredient("bread",2, IngredientUnit.SLICES);
+        Ingredient mixedSalad = new Ingredient("mixed salad",200, IngredientUnit.GRAMS);
+        result.add(bread);
+        result.add(mixedSalad);
+        return result;
+    }
