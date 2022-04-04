@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import features.readFile.ReadFileFeature;
 import features.readRecipes.models.Recipe;
 import features.readRecipes.models.Recipes;
+import helpers.StringHelper;
 import models.OperationResultMessage;
 import models.OperationResultStatus;
 
@@ -29,7 +30,7 @@ public class ReadRecipesFeature {
             ArrayList<Recipe> recipeList = converter.fromJson(recipesString,recipeListType);
             Recipes result = new Recipes();
             result.setRecipes(recipeList);
-            return new OperationResultMessage<>(OperationResultStatus.SUCCESS,"",result);
+            return new OperationResultMessage<>(OperationResultStatus.SUCCESS, StringHelper.EMPTY_STRING,result);
         }
        catch (Exception e){
             return new OperationResultMessage<>(OperationResultStatus.ERROR,e.getCause().getMessage(),null);

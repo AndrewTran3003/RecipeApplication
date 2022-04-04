@@ -1,6 +1,7 @@
 package features.readFile;
 
 import features.readFile.helpers.readFileHelpers;
+import helpers.StringHelper;
 import models.OperationResultMessage;
 import models.OperationResultStatus;
 import org.springframework.stereotype.Service;
@@ -27,9 +28,9 @@ public class ReadFileFeature{
 
     }
     private OperationResultMessage<String> successResponse(String fileString){
-        return new OperationResultMessage<String>(OperationResultStatus.SUCCESS,readFileHelpers.EMPTY_STRING,fileString);
+        return new OperationResultMessage<String>(OperationResultStatus.SUCCESS,StringHelper.EMPTY_STRING,fileString);
     }
     private OperationResultMessage<String> errorResponse(String message){
-        return new OperationResultMessage<String>(OperationResultStatus.ERROR,message,readFileHelpers.EMPTY_STRING);
+        return new OperationResultMessage<String>(OperationResultStatus.ERROR,message, StringHelper.EMPTY_STRING);
     }
 }

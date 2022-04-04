@@ -1,4 +1,5 @@
 import features.readFile.ReadFileFeature;
+import helpers.StringHelper;
 import models.OperationResultMessage;
 import models.OperationResultStatus;
 import org.junit.jupiter.api.Assertions;
@@ -13,7 +14,7 @@ public class ReadFileFeatureTest {
         ReadFileFeature readFileFeature = new ReadFileFeature();
         OperationResultMessage<String> readResult = readFileFeature.readToString("src\\main\\data\\recipes.json");
         Assertions.assertEquals(OperationResultStatus.SUCCESS,readResult.getStatus());
-        Assertions.assertEquals(readFileHelpers.EMPTY_STRING,readResult.getMessage());
+        Assertions.assertEquals(StringHelper.EMPTY_STRING,readResult.getMessage());
         Assertions.assertNotEquals(0,readResult.getResult().length());
     }
     @Test
