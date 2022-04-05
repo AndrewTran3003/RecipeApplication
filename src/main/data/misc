@@ -33,3 +33,9 @@ private Recipes recipeList;
         result.add(mixedSalad);
         return result;
     }
+
+    "bread,10,SLICES,1/04/2022\n" +
+                    "cheese,10,SLICES,1/03/2022\n" +
+                    "butter,250,GRAMS,5/06/2022\n" +
+                    "peanut butter,250,GRAMS,12/12/2023\n" +
+                    "mixed salad,500,GRAMS,24/03/2022";

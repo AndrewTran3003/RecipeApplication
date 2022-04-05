@@ -1,19 +1,13 @@
 package features.readFridge.models;
-
 import models.IngredientUnit;
 
-import java.time.LocalDate;
-
-public class Item {
+public class ItemDto {
     private String item;
     private int amount;
     private IngredientUnit unit;
-    private LocalDate useBy;
-    public Item(String item, int amount, IngredientUnit unit, LocalDate useBy){
-        this.item = item;
-        this.amount = amount;
-        this.unit = unit;
-        this.useBy = useBy;
+    private String useBy;
+    public ItemDto(){
+
     }
     public String getItem(){
         return item;
@@ -33,10 +27,10 @@ public class Item {
     public void setUnit(IngredientUnit value){
         unit = value;
     }
-    public LocalDate getUseBy(){
+    public String getUseBy(){
         return useBy;
     }
-    public void setUseBy(LocalDate value){
+    public void setUseBy(String value){
         useBy = value;
     }
 }
