@@ -1,9 +1,9 @@
 package models;
 
 public class OperationResultMessage<T extends Object> {
-    private OperationResultStatus _status;
-    private String _message;
-    private T _result;
+    private final OperationResultStatus _status;
+    private final String _message;
+    private final T _result;
 
     public OperationResultMessage(OperationResultStatus status, String message,T result){
         _message = message;
