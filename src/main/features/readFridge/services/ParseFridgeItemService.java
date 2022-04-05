@@ -13,6 +13,7 @@ import features.readFridge.models.ItemDto;
 import helpers.StringHelper;
 import models.OperationResultMessage;
 import models.OperationResultStatus;
+import org.springframework.stereotype.Service;
 
 import java.io.StringReader;
 import java.time.LocalDate;
@@ -20,7 +21,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
+@Service
 public class ParseFridgeItemService {
     public OperationResultMessage<Fridge> parse(String input) {
         try {
