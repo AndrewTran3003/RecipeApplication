@@ -1,4 +1,4 @@
-package features.readRecipes.models;
+package models;
 
 public enum IngredientUnit {
     OF,
