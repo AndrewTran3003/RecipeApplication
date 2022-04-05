@@ -1,6 +1,7 @@
 import features.readFile.ReadFileFeature;
 import features.readRecipes.ReadRecipesFeature;
 import features.readRecipes.models.Recipes;
+import features.readRecipes.services.ParseRecipeListService;
 import helpers.StringHelper;
 import models.OperationResultMessage;
 import models.OperationResultStatus;
@@ -14,7 +15,8 @@ public class ReadRecipesFeatureTest {
     @Test
     public void canReadRecipeList(){
         ReadFileFeature readFileFeature = new ReadFileFeature();
-        ReadRecipesFeature feature = new ReadRecipesFeature(readFileFeature);
+        ParseRecipeListService parseRecipeListService = new ParseRecipeListService();
+        ReadRecipesFeature feature = new ReadRecipesFeature(readFileFeature,parseRecipeListService);
         OperationResultMessage<Recipes> recipeList = feature.getRecipes();
         Assertions.assertEquals(StringHelper.EMPTY_STRING, recipeList.getMessage());
         Assertions.assertEquals(OperationResultStatus.SUCCESS, recipeList.getStatus());
