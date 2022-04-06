@@ -4,12 +4,14 @@ import models.fridge.Fridge;
 import models.fridge.Item;
 import models.recipeList.Recipe;
 import models.recipeList.Recipes;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class ReorderService {
     public Recipes reorderRecipeList(ArrayList<Recipe> recipeList, Fridge fridge) {
         Fridge sortedFridge = reorderItemsInFridge(fridge);
