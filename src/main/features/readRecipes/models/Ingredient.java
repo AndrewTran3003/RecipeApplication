@@ -1,5 +1,7 @@
 package features.readRecipes.models;
 
+import models.IngredientUnit;
+
 public class Ingredient {
     private String item;
     private int amount;
