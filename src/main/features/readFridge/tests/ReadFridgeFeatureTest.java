@@ -1,6 +1,6 @@
 import features.readFile.ReadFileFeature;
 import features.readFridge.ReadFridgeFeature;
-import features.readFridge.models.Fridge;
+import models.fridge.Fridge;
 import features.readFridge.services.ParseFridgeItemService;
 import helpers.StringHelper;
 import models.OperationResultMessage;

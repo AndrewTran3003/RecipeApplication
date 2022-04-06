@@ -1,6 +1,6 @@
 package features.readRecipes.helpers;
 
-import features.readRecipes.models.Recipes;
+import models.recipeList.Recipes;
 import helpers.StringHelper;
 import models.OperationResultMessage;
 import models.OperationResultStatus;

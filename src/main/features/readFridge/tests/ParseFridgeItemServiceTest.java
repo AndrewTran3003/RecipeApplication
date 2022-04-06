@@ -1,7 +1,7 @@
 package features.readFridge.tests;
 
 import features.readFridge.helpers.MessageHelper;
-import features.readFridge.models.Fridge;
+import models.fridge.Fridge;
 import features.readFridge.services.ParseFridgeItemService;
 import helpers.StringHelper;
 import models.OperationResultMessage;

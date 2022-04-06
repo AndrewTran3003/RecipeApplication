@@ -3,11 +3,9 @@ package features.readRecipes.services;
 import com.google.gson.Gson;
 import features.readRecipes.helpers.ResultHelper;
 import features.readRecipes.helpers.TypeHelper;
-import features.readRecipes.models.Recipe;
-import features.readRecipes.models.Recipes;
-import helpers.StringHelper;
+import models.recipeList.Recipe;
+import models.recipeList.Recipes;
 import models.OperationResultMessage;
-import models.OperationResultStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

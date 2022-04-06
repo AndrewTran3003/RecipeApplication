@@ -1,4 +1,4 @@
-package features.readRecipes.models;
+package models.recipeList;
 
 import java.util.ArrayList;
 

@@ -1,15 +1,12 @@
 package features.readFridge.services;
 
-import com.opencsv.CSVParser;
-import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
-import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import features.readFridge.helpers.MessageHelper;
-import features.readFridge.models.Fridge;
-import features.readFridge.models.Item;
-import features.readFridge.models.ItemDto;
+import models.fridge.Fridge;
+import models.fridge.Item;
+import models.fridge.ItemDto;
 import helpers.StringHelper;
 import models.OperationResultMessage;
 import models.OperationResultStatus;

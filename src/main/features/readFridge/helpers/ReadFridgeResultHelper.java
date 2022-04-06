@@ -1,6 +1,6 @@
 package features.readFridge.helpers;
 
-import features.readFridge.models.Fridge;
+import models.fridge.Fridge;
 import helpers.StringHelper;
 import models.OperationResultMessage;
 import models.OperationResultStatus;

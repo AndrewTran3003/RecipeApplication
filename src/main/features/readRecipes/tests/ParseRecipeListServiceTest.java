@@ -1,4 +1,4 @@
-import features.readRecipes.models.Recipes;
+import models.recipeList.Recipes;
 import features.readRecipes.services.ParseRecipeListService;
 import helpers.StringHelper;
 import models.OperationResultMessage;

@@ -1,4 +1,4 @@
-package features.readFridge.models;
+package models.fridge;
 
 import java.util.ArrayList;
 

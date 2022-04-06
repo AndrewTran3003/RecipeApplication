@@ -2,12 +2,14 @@ package features.readRecipes;
 
 import features.readFile.ReadFileFeature;
 import features.readRecipes.helpers.ResultHelper;
-import features.readRecipes.models.Recipes;
+import models.recipeList.Recipes;
 import features.readRecipes.services.ParseRecipeListService;
 import helpers.StringHelper;
 import models.OperationResultMessage;
 import models.OperationResultStatus;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ReadRecipesFeature {
     private final ReadFileFeature readFileFeature;
     private final ParseRecipeListService parseRecipeListService;
