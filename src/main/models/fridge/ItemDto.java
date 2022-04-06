@@ -1,5 +1,4 @@
 package models.fridge;
-import models.IngredientUnit;
 import models.recipeList.Ingredient;
 
 public class ItemDto extends Ingredient {
