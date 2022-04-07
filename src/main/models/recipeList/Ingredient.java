@@ -3,10 +3,12 @@ package models.recipeList;
 import models.IngredientUnit;
 
 public class Ingredient {
-    private String item;
-    private int amount;
-    private IngredientUnit unit;
+    protected String item;
+    protected int amount;
+    protected IngredientUnit unit;
+    public Ingredient(){
 
+    }
     public Ingredient(String item, int amount, IngredientUnit unit){
         this.item = item;
         this.amount = amount;

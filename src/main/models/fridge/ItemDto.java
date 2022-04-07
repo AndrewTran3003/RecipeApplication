@@ -1,31 +1,10 @@
 package models.fridge;
-import models.IngredientUnit;
+import models.recipeList.Ingredient;
 
-public class ItemDto {
-    private String item;
-    private int amount;
-    private IngredientUnit unit;
+public class ItemDto extends Ingredient {
     private String useBy;
     public ItemDto(){
 
-    }
-    public String getItem(){
-        return item;
-    }
-    public void setItem(String value){
-        item = value;
-    }
-    public int getAmount(){
-        return amount;
-    }
-    public void setAmount(int value){
-        amount = value;
-    }
-    public IngredientUnit getUnit(){
-        return unit;
-    }
-    public void setUnit(IngredientUnit value){
-        unit = value;
     }
     public String getUseBy(){
         return useBy;
