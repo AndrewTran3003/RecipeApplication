@@ -48,12 +48,24 @@ public class selectRecipesTestData {
     private static Recipe getGrilledCheeseOnToast() {
         return new Recipe("grilledcheeseontoast", getGrilledCheeseOnToastIngredients());
     }
+    public static Recipe getButterEgg(){
+        return new Recipe("butteregg", getButterEggIngredients());
+    }
+
 
     public static Recipe getScrambledEgg() {
         return new Recipe("scrambledegg", getScrambledEggIngredients());
     }
     public static Recipe getPeanutButterChickenNugget(){
         return new Recipe("peanutbutterchickennugget",getPeanutButterChickenNuggetIngredients());
+    }
+    private static ArrayList<Ingredient> getButterEggIngredients() {
+        Ingredient eggs = new Ingredient("egg", 4, IngredientUnit.OF);
+        Ingredient butter = new Ingredient("butter",200, IngredientUnit.GRAMS);
+        ArrayList<Ingredient> result = new ArrayList<>();
+        result.add(eggs);
+        result.add(butter);
+        return result;
     }
 
     private static ArrayList<Ingredient> getPeanutButterChickenNuggetIngredients() {

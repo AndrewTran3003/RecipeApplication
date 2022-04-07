@@ -18,13 +18,16 @@ public class ReorderServiceTest {
         recipeList.add(selectRecipesTestData.getHamAndCheeseToastie());
         recipeList.add(selectRecipesTestData.getPeanutButterChickenNugget());
         recipeList.add(selectRecipesTestData.getSaladSandwich());
+        recipeList.add(selectRecipesTestData.getButterEgg());
         Fridge fridge = selectRecipesTestData.getFridgeData2();
         Recipes reorderedRecipeList = service.reorderRecipeList(recipeList,fridge);
-        Assertions.assertEquals(4, reorderedRecipeList.getRecipes().size());
+        Assertions.assertEquals(5, reorderedRecipeList.getRecipes().size());
         Assertions.assertEquals("peanutbutterchickennugget",reorderedRecipeList.getRecipes().get(0).getName());
         Assertions.assertEquals("saladsandwich",reorderedRecipeList.getRecipes().get(1).getName());
         Assertions.assertEquals("hamandcheesetoastie",reorderedRecipeList.getRecipes().get(2).getName());
         Assertions.assertEquals("scrambledegg",reorderedRecipeList.getRecipes().get(3).getName());
+        Assertions.assertEquals("butteregg",reorderedRecipeList.getRecipes().get(4).getName());
+
     }
 
     @Test

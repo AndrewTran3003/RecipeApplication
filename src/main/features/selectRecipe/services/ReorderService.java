@@ -15,30 +15,34 @@ import java.util.stream.Collectors;
 public class ReorderService {
     public Recipes reorderRecipeList(ArrayList<Recipe> recipeList, Fridge fridge) {
         Fridge sortedFridge = reorderItemsInFridge(fridge);
-        ArrayList<Recipe> sortedRecipeList = new ArrayList<>();
-        for(Item item : sortedFridge.getItems()){
-            int index = sortedFridge.getItems().indexOf(item);
-            Recipe matchingRecipe = findRecipe(recipeList,index,sortedFridge.getItems());
-            if (matchingRecipe != null){
-                sortedRecipeList.add(matchingRecipe);
-            }
-
-        }
+        ArrayList<Recipe> sortedRecipeList = reorderRecipeList(recipeList,0,sortedFridge.getItems());
         Recipes result = new Recipes();
         result.setRecipes(sortedRecipeList);
         return result;
     }
-
-    private Recipe findRecipe(ArrayList<Recipe> recipeList, int index, ArrayList<Item> items) {
-        if (index > items.size() - 1){
-            return null;
+    private ArrayList<Recipe> reorderRecipeList(ArrayList<Recipe>recipes, int index, ArrayList<Item> items){
+        ArrayList<Recipe> result = new ArrayList<>();
+        for(int i = index; i < items.size();i++){
+            ArrayList<Recipe> matched = findRecipesWithItem(recipes,items.get(i));
+            if (matched.size() == 1){
+                matched.get(0).setChosen(true);
+                result.add(matched.get(0));
+            }
+            else{
+                result.addAll(reorderRecipeList(matched,i + 1,items));
+            }
         }
-        List<Recipe> filteredRecipeList = recipeList.stream().filter(recipe -> !recipe.getChosen() && recipe.getIngredients().stream().anyMatch(ingredient -> ingredient.getItem() == items.get(index).getItem())).collect(Collectors.toList());
-        if (filteredRecipeList.size() == 1){
-            filteredRecipeList.get(0).setChosen(true);
-            return filteredRecipeList.get(0);
-        }
-        return findRecipe(recipeList,index + 1, items);
+        return result;
+    }
+    private ArrayList<Recipe> findRecipesWithItem(ArrayList<Recipe> recipeList, Item item){
+        return new ArrayList<>(
+                recipeList.stream()
+                        .filter(recipe ->
+                                !recipe.getChosen()
+                                        && recipe.getIngredients()
+                                        .stream()
+                                        .anyMatch(ingredient -> ingredient.getItem() == item.getItem()))
+                        .collect(Collectors.toList()));
     }
 
     public Fridge reorderItemsInFridge(Fridge fridge){
