@@ -59,6 +59,20 @@ public class selectRecipesTestData {
     public static Recipe getPeanutButterChickenNugget(){
         return new Recipe("peanutbutterchickennugget",getPeanutButterChickenNuggetIngredients());
     }
+
+    public static Recipe getCheeseToastie(){
+        return new Recipe("cheesetoastie",getCheeseToastieIngredients());
+    }
+
+    private static ArrayList<Ingredient> getCheeseToastieIngredients() {
+        Ingredient bread = new Ingredient("bread", 2, IngredientUnit.SLICES);
+        Ingredient cheese = new Ingredient("cheese", 2, IngredientUnit.SLICES);
+        ArrayList<Ingredient> result = new ArrayList<>();
+        result.add(bread);
+        result.add(cheese);
+        return result;
+    }
+
     private static ArrayList<Ingredient> getButterEggIngredients() {
         Ingredient eggs = new Ingredient("egg", 4, IngredientUnit.OF);
         Ingredient butter = new Ingredient("butter",200, IngredientUnit.GRAMS);
